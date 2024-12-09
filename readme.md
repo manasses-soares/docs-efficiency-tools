@@ -10,6 +10,8 @@
 
 A API Assaí Efficiency Tools fornece serviços para gerenciamento de acessos RUB, incluindo funcionalidades de reset de senha e concessão de acessos através de integração com o ServiceNow.
 
+**URL Base:** `https://assai-efficiency-tools.contextflow.ai/`
+
 ![ServiceNow](https://img.shields.io/badge/integration-ServiceNow-brightgreen.svg)
 ![Security](https://img.shields.io/badge/security-OAuth2-orange.svg)
 ![Documentation](https://img.shields.io/badge/swagger-valid-brightgreen.svg)
@@ -23,7 +25,7 @@ A API Assaí Efficiency Tools fornece serviços para gerenciamento de acessos RU
 Endpoint básico para verificar se o serviço está disponível.
 
 ```http
-GET /
+GET https://assai-efficiency-tools.contextflow.ai/
 ```
 
 **Respostas:**
@@ -35,7 +37,7 @@ GET /
 ![Auth](https://img.shields.io/badge/requires-authentication-red.svg)
 
 ```http
-POST /webhook/servicenow/
+POST https://assai-efficiency-tools.contextflow.ai/webhook/servicenow/
 ```
 
 **Request Body:**
@@ -72,7 +74,7 @@ POST /webhook/servicenow/
 ![Auth](https://img.shields.io/badge/requires-authentication-red.svg)
 
 ```http
-POST /webhook/servicenow/
+POST https://assai-efficiency-tools.contextflow.ai/webhook/servicenow/
 ```
 
 **Request Body:**
@@ -122,9 +124,9 @@ POST /webhook/servicenow/
 
 A API retorna respostas HTTP padrão indicando o sucesso ou falha da operação:
 
-![Status](https://img.shields.io/badge/200-Success-success.svg) Sucesso
-![Status](https://img.shields.io/badge/400-Bad%20Request-red.svg) Erro na requisição
-![Status](https://img.shields.io/badge/401-Unauthorized-red.svg) Não autorizado
-![Status](https://img.shields.io/badge/403-Forbidden-red.svg) Acesso proibido
-![Status](https://img.shields.io/badge/404-Not%20Found-red.svg) Recurso não encontrado
-![Status](https://img.shields.io/badge/500-Server%20Error-red.svg) Erro interno do servidor
+![Status](https://img.shields.io/badge/200-Success-success.svg) Sucesso  
+![Status](https://img.shields.io/badge/400-Bad%20Request-red.svg) Erro na requisição  
+![Status](https://img.shields.io/badge/401-Unauthorized-red.svg) Não autorizado  
+![Status](https://img.shields.io/badge/403-Forbidden-red.svg) Acesso proibido  
+![Status](https://img.shields.io/badge/404-Not%20Found-red.svg) Recurso não encontrado  
+![Status](https://img.shields.io/badge/500-Server%20Error-red.svg) Erro interno do servidor  
