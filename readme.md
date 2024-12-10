@@ -122,11 +122,27 @@ POST https://assai-efficiency-tools.contextflow.ai/webhook/servicenow/
 
 ## ⚠️ Tratamento de Erros
 
-A API retorna respostas HTTP padrão indicando o sucesso ou falha da operação:
+### Escopo de Atuação
+Nossa solução só processa e executa as regras de negócio quando recebe um payload válido (HTTP 200). Qualquer erro anterior a este ponto indica problemas na construção ou envio do payload pelo sistema requisitante.
 
-![Status](https://img.shields.io/badge/200-Success-success.svg) Sucesso  
-![Status](https://img.shields.io/badge/400-Bad%20Request-red.svg) Erro na requisição  
-![Status](https://img.shields.io/badge/401-Unauthorized-red.svg) Não autorizado  
-![Status](https://img.shields.io/badge/403-Forbidden-red.svg) Acesso proibido  
-![Status](https://img.shields.io/badge/404-Not%20Found-red.svg) Recurso não encontrado  
-![Status](https://img.shields.io/badge/500-Server%20Error-red.svg) Erro interno do servidor  
+### Códigos de Status HTTP
+![Status](https://img.shields.io/badge/200-Success-success.svg) **Sucesso**
+- Payload recebido e validado com sucesso
+- Única condição onde nossa solução processa a requisição
+
+![Status](https://img.shields.io/badge/400-Bad%20Request-red.svg) **Erro na Requisição**
+- Payload mal formatado ou com dados inválidos
+- Requer correção pelo sistema solicitante no formato dos dados enviados
+
+![Status](https://img.shields.io/badge/404-Not%20Found-red.svg) **Recurso Não Encontrado**
+- Endpoint ou recurso solicitado não existe
+- Requer correção pelo sistema solicitante na URL ou rota utilizada
+
+![Status](https://img.shields.io/badge/500-Server%20Error-red.svg) **Erro Interno do Servidor**
+- Falha inesperada no processamento interno da nossa solução
+- Nossa equipe monitora e recebe alertas automáticos destes erros
+- Logs detalhados são gerados para análise e resolução pela nossa equipe
+- Não requer ação do sistema solicitante
+
+### Responsabilidade de Tratamento
+O sistema requisitante deve implementar o monitoramento e tratamento apropriado dos códigos 4xx, que indicam problemas no payload enviado. Erros 500 são monitorados e tratados pela nossa equipe.
