@@ -43,12 +43,14 @@ POST https://assai-efficiency-tools.contextflow.ai/webhook/servicenow/
 **Request Body:**
 ```json
 {
-  "usuario": "string",
-  "senha": "string",
-  "sistema": "string",
-  "ticket": "string",
-  "contact_type": "string",
-  "tipo": "string"
+  "data": {
+    "usuario": "string",
+    "senha": "string",
+    "sistema": "string",
+    "ticket": "string",
+    "contact_type": "string",
+    "tipo": "string"
+  }
 }
 ```
 
@@ -80,13 +82,15 @@ POST https://assai-efficiency-tools.contextflow.ai/webhook/servicenow/
 **Request Body:**
 ```json
 {
-  "matricula": "string",
-  "acao": "string",
-  "data_inicial": "YYYY-MM-DD",
-  "data_final": "YYYY-MM-DD",
-  "sistema": "string",
-  "perfil": "string",
-  "ticket": "string"
+  "data": {
+    "matricula": "string",
+    "acao": "string",
+    "data_inicial": "YYYY-MM-DD",
+    "data_final": "YYYY-MM-DD",
+    "sistema": "string",
+    "perfil": "string",
+    "ticket": "string"
+  }
 }
 ```
 
